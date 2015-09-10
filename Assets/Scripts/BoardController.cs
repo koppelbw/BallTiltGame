@@ -26,7 +26,8 @@ public class BoardController : MonoBehaviour {
 
 	public void resetBoard() {
 
-		this.transform.rotation = Quaternion.Slerp (this.transform.rotation, origin, Time.deltaTime * resetSpeed);
+		//this.transform.rotation = Quaternion.Slerp (this.transform.rotation, origin, Time.deltaTime * resetSpeed);
+		this.transform.rotation = new Quaternion (0, 0, 0, 0);
 	}
 
 }

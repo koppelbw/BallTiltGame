@@ -4,6 +4,7 @@ using System.Collections;
 public class BallController : MonoBehaviour {
 
 	public GameController gameController;
+	public GameObject ballPrefab;
 
 	void Start() {
 		gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
@@ -20,6 +21,8 @@ public class BallController : MonoBehaviour {
 	}
 
 	public void resetBall() {
-		this.transform.position = Vector3.Lerp(this.transform.position, new Vector3(7.5f, 1.0f, 7.139f), Time.deltaTime * 10);
+		this.gameObject.GetComponent<Rigidbody> ().isKinematic = true;
+		this.transform.position = new Vector3 (7.5f, 2.0f, 7.139f);
+		this.gameObject.GetComponent<Rigidbody> ().isKinematic = false;
 	}
 }
