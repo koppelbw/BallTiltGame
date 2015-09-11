@@ -6,6 +6,7 @@ public class BoardController : MonoBehaviour {
 	public float resetSpeed;
 	public float rotationSpeed;
 	Quaternion origin = Quaternion.Euler (0, 0, 0);
+	public GameObject respawn;
 
 
 	void Start () {
@@ -27,7 +28,6 @@ public class BoardController : MonoBehaviour {
 	public void resetBoard() {
 
 		//this.transform.rotation = Quaternion.Slerp (this.transform.rotation, origin, Time.deltaTime * resetSpeed);
-		this.transform.rotation = new Quaternion (0, 0, 0, 0);
+		this.transform.rotation = Quaternion.Slerp (this.transform.rotation, respawn.transform.rotation, 1.0f);
 	}
-
 }

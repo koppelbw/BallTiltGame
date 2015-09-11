@@ -4,7 +4,7 @@ using System.Collections;
 public class BallController : MonoBehaviour {
 
 	public GameController gameController;
-	public GameObject ballPrefab;
+	public GameObject respawn;
 
 	void Start() {
 		gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
@@ -22,7 +22,7 @@ public class BallController : MonoBehaviour {
 
 	public void resetBall() {
 		this.gameObject.GetComponent<Rigidbody> ().isKinematic = true;
-		this.transform.position = new Vector3 (7.5f, 2.0f, 7.139f);
+		this.transform.position = respawn.transform.position;
 		this.gameObject.GetComponent<Rigidbody> ().isKinematic = false;
 	}
 }
